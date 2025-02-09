@@ -39,7 +39,7 @@
              (map #(trim-row-to-length % column-length)))))))
 
 (defn write-csv
-  "Write data (a sequence of rows) to a CSV file."
+  "Write data file"
   [data output-file]
   (with-open [writer (io/writer output-file)]
     (csv/write-csv writer data)))
@@ -56,7 +56,7 @@
           (if (and table-data (not (empty? table-data)))
             (do
               (write-csv table-data output-file)
-              (println "Table data successfully exported to" output-file))
-            (println "No valid table data found in the HTML document.")))
+              (println "Data exported to" output-file))
+            (println "No valid data found in url.")))
         (catch Exception e
           (println "Error encountered:" (.getMessage e)))))))
