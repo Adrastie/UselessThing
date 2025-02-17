@@ -7,10 +7,16 @@ FIXME: description
 Download from http://example.com/FIXME.
 
 ## Usage
-As script:
+
+Deps:
+    lein deps
+
+Then it can be run as script:
     lein run <url> <outputfile>
 
-As Jar (use lein to build):
+Or build as jar/uberjar:
+    lein uberjar
+then    
     java -jar painmeel-0.1.0-standalone.jar <url> <outputfile>
 
 ## Options
